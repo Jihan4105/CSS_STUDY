@@ -3,62 +3,69 @@
 
 <head>
   <style>
-    body {
-      margin: 0;
+    /* 버튼의 초기 설정값 */
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
     }
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 25%;
-      background-color: #f1f1f1;
-      position: fixed;
-      height: 100%;
-      overflow: auto;
+    /*버튼및 컨탠츠의 부모 div의 설정값*/
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    /*컨탠츠들을 감싼 div의 초기 설정 값 */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
     }
 
-    li a {
-      display: block;
-      color: #000;
-      padding: 8px 16px;
+    /*컨탠츠들의 폰트 색, 패딩, a태그 밑줄제거, a태그 블럭취급*/
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
       text-decoration: none;
+      display: block;
     }
 
-    li a.active {
-      background-color: #04AA6D;
-      color: white;
+    /*나타난 컨탠츠가 hover되었을때 배경색 변경*/
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
     }
 
-    li a:hover:not(.active) {
-      background-color: #555;
-      color: white;
+    /*버튼이 hover되었을때 컨탠츠 칼럼으로 보이기*/
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* 버튼이 hover되었을때 버튼 배경색 변경*/
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
     }
   </style>
 </head>
 
 <body>
-  <ul>
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#news">News</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-  <div style="margin-left:25%;padding:1px 16px;height:1000px;">
-    <h2>Fixed Full-height Side Nav</h2>
-    <h3>Try to scroll this area, and see how the sidenav sticks to the page</h3>
-    <p>Notice that this div element has a left margin of 25%. This is because the side navigation is
-      set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p>
-    <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the
-      sidenav is too long (for example if it has over 50 links inside of it).</p>
-    <p>Some text..</p>
-    <p>Some text..</p>
-    <p>Some text..</p>
-    <p>Some text..</p>
-    <p>Some text..</p>
-    <p>Some text..</p>
-    <p>Some text..</p>
+  <h2>Dropdown Menu</h2>
+  <p>Move the mouse over the button to open the dropdown menu.</p>
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
   </div>
+  <p><strong>Note:</strong> We use href="#" for test links. In a real web site this would be URLs.</p>
 </body>
 
 </html>

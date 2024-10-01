@@ -1,19 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<style>
-img {
- position: absolute;
- left: 0px;
- top: 0px;
- /* z-index: -1; */
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 바깥쪽 검은 태두리의 박스*/
+    .container {
+      border: 4px solid;
+    }
+
+    /* 파란색 박스의 색상, 너비, 높이, 등등 형태 정의*/
+    .container .item {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      border-radius: 10px;
+      font-size: 40px;
+      margin: 10px;
+    }
+
+    /* 4번 박스의 형태 정의 */
+    .container .item.four {
+      width: 150px;
+      height: 150px;
+      background-color: orange;
+    }
+
+    /* 1,2,3 번 박스에 float 속성 부여*/
+    .float {
+      float: left;
+    }
+
+    /* 1,2,3번 박스의 float 버그 고침(clearfix) */
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  </style>
 </head>
+
 <body>
-<h1>This is a heading</h1>
-<img src="public/images/img_tree.png">
-<p>Because the image has a z-index of -1, it will be placed behind the text.</p>
-<p style="position: absolute">hellosadfffffffffffffffffffffffffffffasdfsadfasdfsdafsadfasdfsadfasdf</p>
+  <div class="container">
+    <div class="clearfix">
+      <div class="item float">1</div>
+      <div class="item float">2</div>
+      <div class="item float">3</div>
+    </div>
+    <div class="item four">4</div>
+  </div>
 </body>
+
 </html>

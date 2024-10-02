@@ -1,71 +1,17 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <style>
-    /* 버튼의 초기 설정값 */
-    .dropbtn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 16px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-    }
-
-    /*버튼및 컨탠츠의 부모 div의 설정값*/
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    
-    /*컨탠츠들을 감싼 div의 초기 설정 값 */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-
-    /*컨탠츠들의 폰트 색, 패딩, a태그 밑줄제거, a태그 블럭취급*/
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    /*나타난 컨탠츠가 hover되었을때 배경색 변경*/
-    .dropdown-content a:hover {
-      background-color: #f1f1f1
-    }
-
-    /*버튼이 hover되었을때 컨탠츠 칼럼으로 보이기*/
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    /* 버튼이 hover되었을때 버튼 배경색 변경*/
-    .dropdown:hover .dropbtn {
-      background-color: #3e8e41;
-    }
-  </style>
+<style>
+[title~=flower] {
+ border: 5px solid yellow;
+}
+</style>
 </head>
-
 <body>
-  <h2>Dropdown Menu</h2>
-  <p>Move the mouse over the button to open the dropdown menu.</p>
-  <div class="dropdown">
-    <button class="dropbtn">Dropdown</button>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </div>
-  <p><strong>Note:</strong> We use href="#" for test links. In a real web site this would be URLs.</p>
+<h2>CSS [attribute~="value"] Selector</h2>
+<p>All images with the title attribute containing the word "flower" get a yellow border.</p>
+<img src="images/klematis.jpg" title="klematis flower" width="150" height="113">
+<img src="images/img_flwr.gif" title="flower" width="224" height="162">
+<img src="images/img_tree.gif" title="tree" width="200" height="358">
 </body>
-
 </html>
